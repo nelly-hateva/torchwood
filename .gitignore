@@ -1,0 +1,4 @@
+*.pyc
+reuters21578/*
+data/*
+corpus/*

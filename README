@@ -1,0 +1,4 @@
+Steps:
+1. Processing:
+  - Tokenization and stemming
+2. Gamma encoding for the index

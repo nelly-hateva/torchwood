@@ -22,6 +22,8 @@ for file in glob.glob('*.sgm'):
         clean_data = re.sub(r'&lt;', '', clean_data)
         # remove f****reute that appears in unknown tag
         clean_data = re.sub(r'f(\d{,4})reute', '', clean_data)
+        clean_data = re.sub(r'-', ' - ', clean_data)
+        clean_data = re.sub(r'><', '> <', clean_data)
         new_file = os.path.join(data_dir, file)
         with open(new_file, 'w+') as nf:
             nf.write(clean_data)

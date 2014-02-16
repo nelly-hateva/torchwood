@@ -40,6 +40,8 @@ with open(index_file, "r") as index_file:
 
 with open(lengths_file, "r") as lengths:
     documents_lengths = map(lambda line: line.strip(), lengths.readlines())
+    corpus_length = int(documents_lengths[len(documents_lengths) - 1])
+    del documents_lengths[len(documents_lengths) - 1]
 
 
 for term in query:
@@ -55,7 +57,7 @@ probabilities = [[1 for x in xrange(documents_count)] for x in xrange(query_term
 results = [1 for x in xrange(documents_count)]
 for i, term in enumerate(inner_query):
     try:
-        term_collection_frequency = count_term[term] / 3065149
+        term_collection_frequency = count_term[term] / corpus_length
     except KeyError:  # the term doesn't appear in the collection
         continue
     for document in xrange(1, documents_count + 1):

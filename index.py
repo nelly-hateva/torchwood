@@ -29,4 +29,4 @@ with open(lengths_file, "w+") as documents_lengths:
             for document in entry[1]:
                 index.write('{0} {1} '.format(document[0], document[1]))
             index.write('\n')
-print corpus_length  # 3065149
+    documents_lengths.write('%d\n' % corpus_length)

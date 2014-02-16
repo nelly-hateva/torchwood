@@ -7,8 +7,8 @@ from stemmer import PorterStemmer
 
 
 here = lambda *x: os.path.abspath(os.path.join(os.path.dirname(__file__), *x))
-data_dir=here('data', )
-corpus_dir=here('corpus', )
+data_dir = here('data', )
+corpus_dir = here('corpus', )
 
 total_files = 0
 p = PorterStemmer()
@@ -28,8 +28,8 @@ for file in glob.glob('*.sgm'):
             clean_data = re.sub(r'/', ' / ', read_data)
             clean_data = re.sub(r'-', ' - ', clean_data)
             """
-            The punctuations contained in the 'string.punctuation are 
-            " '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~' "
+            The punctuations contained in the string.punctuation are
+            !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
             """
             clean_data = read_data.translate(None, string.punctuation)
             clean_data = clean_data.lower()

@@ -4,9 +4,9 @@ from collections import defaultdict, Counter
 
 
 here = lambda *x: os.path.abspath(os.path.join(os.path.dirname(__file__), *x))
-corpus_dir=here('corpus', )
-lengths_file=here('lengths', )
-index_file=here('index',)
+corpus_dir = here('corpus', )
+lengths_file = here('lengths', )
+index_file = here('index',)
 
 
 corpus_length = 0

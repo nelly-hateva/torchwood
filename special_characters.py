@@ -3,8 +3,8 @@ import os
 import re
 
 here = lambda *x: os.path.abspath(os.path.join(os.path.dirname(__file__), *x))
-reuters_dir=here('reuters21578', )
-data_dir=here('data', )
+reuters_dir = here('reuters21578', )
+data_dir = here('data', )
 
 
 if not os.path.exists(data_dir):

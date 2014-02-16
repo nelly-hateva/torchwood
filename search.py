@@ -40,7 +40,8 @@ with open(index_file, "r") as index_file:
 
 with open(lengths_file, "r") as lengths:
     documents_lengths = map(lambda line: line.strip(), lengths.readlines())
-    corpus_length = int(documents_lengths[len(documents_lengths) - 1])
+    documents_lengths = [int(length) for length in documents_lengths]
+    corpus_length = documents_lengths[len(documents_lengths) - 1]
     del documents_lengths[len(documents_lengths) - 1]
 
 
@@ -61,7 +62,7 @@ for i, term in enumerate(inner_query):
     except KeyError:  # the term doesn't appear in the collection
         continue
     for document in xrange(1, documents_count + 1):
-        probabilities[i][document - 1] = lambda_ * (index[term][str(document)] / int(documents_lengths[document - 1]) + term_collection_frequency)
+        probabilities[i][document - 1] = lambda_ * (index[term][str(document)] / documents_lengths[document - 1] + term_collection_frequency)
 
 
 for i in xrange(documents_count):

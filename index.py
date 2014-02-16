@@ -1,5 +1,4 @@
 import os
-import operator
 from collections import defaultdict, Counter
 
 

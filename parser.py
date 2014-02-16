@@ -11,7 +11,7 @@ data_dir=here('data', )
 corpus_dir=here('corpus', )
 
 total_files = 0
-exclude = set(string.punctuation)
+p = PorterStemmer()
 
 if not os.path.exists(corpus_dir):
     os.makedirs(corpus_dir)
@@ -33,7 +33,6 @@ for file in glob.glob('*.sgm'):
             """
             clean_data = read_data.translate(None, string.punctuation)
             clean_data = clean_data.lower()
-            p = PorterStemmer()
             output = ''
             for word in clean_data.split():
                 output += p.stem(word, 0, len(word) - 1)

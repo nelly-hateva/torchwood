@@ -2,3 +2,6 @@
 reuters21578/*
 data/*
 corpus/*
+index
+stopwords
+lengths
